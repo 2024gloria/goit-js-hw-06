@@ -1,7 +1,6 @@
 "use strict";
 class Storage {
   #items;
-  items = [];
   constructor(items) {
     this.#items = items;
   }
@@ -18,11 +17,8 @@ class Storage {
   }
 
   removeItem(itemToRemove) {
-    if (this.#items.includes(itemToRemove)) {
-      if (this.#items.indexOf(itemToRemove) !== -1) {
-        this.#items.splice(this.#items.indexOf(itemToRemove), 1);
-      }
-      return this;
+    if (this.#items.indexOf(itemToRemove) !== -1) {
+      this.#items.splice(this.#items.indexOf(itemToRemove), 1);
     }
   }
 }
